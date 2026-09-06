@@ -1,0 +1,41 @@
+{
+  "info": {
+    "name": "Site Crawler API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Start Crawl",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"seedUrl\": \"http://example.com\",\n  \"maxDepth\": 2,\n  \"maxPages\": 10,\n  \"threads\": 2,\n  \"delayMs\": 500\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/v1/crawls",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "8083",
+          "path": [ "api", "v1", "crawls" ]
+        }
+      }
+    },
+    {
+      "name": "Get Crawl Status",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8083/api/v1/crawls/1",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "8083",
+          "path": [ "api", "v1", "crawls", "1" ]
+        }
+      }
+    }
+  ]
+}
